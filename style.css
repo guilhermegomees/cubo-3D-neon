@@ -1,0 +1,406 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #404040;
+}
+.container{
+    width: 150px;
+    height: 150px;
+    margin: 100px;
+    perspective: 600px;
+}
+.cube, .cube-side{
+    width: 150px;
+    height: 150px;
+}
+.cube{
+    transform-style: preserve-3d;
+    position: relative;
+    animation: animete_cube 20s infinite linear;
+}
+.cube-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    border-color: rgba(30, 144, 255, .5);
+    color: rgba(30, 144, 255, .8);
+    background-color: rgba(30, 144, 255, .2);
+    position: absolute;
+}
+.cube-side-front{
+    background-color: red;
+    color: black;
+    transform: translate3d(0, 0, 75px);
+    display: flex;
+}
+.cube-side-back{
+    background-color: orange;
+    color: orange;
+    transform: rotateY(180deg) translate3d(0, 0, 75px);
+    display: flex;
+}
+.cube-side-top{
+    background-color: yellow;
+    color: yellow;
+    transform: rotateX(90deg) translate3d(0, 0, 75px);
+    display: flex;
+}
+.cube-side-rigth{
+    background-color: green;
+    color: green;
+    transform: rotateY(90deg) translate3d(0, 0, 75px);
+    display: flex;
+}
+.cube-side-bottom{
+    background-color: white;
+    color: white;
+    transform: rotateX(-90deg) translate3d(0, 0, 75px);
+    display: flex;
+}
+.cube-side-left{
+    background-color: cyan;
+    color: cyan;
+    transform: rotateY(-90deg) translate3d(0, 0, 75px);
+    display: flex;
+}
+
+
+.block-1{
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.block-2{
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.block-3{
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+
+/* RED */
+.block-1-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+    border-left: 0;
+}
+.block-2-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+    border-left: 0;
+}
+.block-3-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border-right: 1px solid #000;
+}
+.block-4-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+}
+.block-5-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+}
+.block-6-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+    border-bottom: 0;
+}
+.block-7-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+    border-right: 0;
+}
+.block-8-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border: 1px solid #000;
+    border-top: 0;
+    border-right: 0;
+}
+.block-9-front{
+    background-color: red;
+    width: 100%;
+    height: 33%;
+    border-left: 1px solid #000;
+}
+
+
+/* ORANGE */
+.block-1-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-2-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-3-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-4-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-5-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-6-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-7-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-8-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+.block-9-back{
+    background-color: orange;
+    width: 100%;
+    height: 33%;
+}
+
+
+/* YELLOW */
+.block-1-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-2-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-3-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-4-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-5-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-6-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-7-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-8-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+.block-9-top{
+    background-color: yellow;
+    width: 100%;
+    height: 33%;
+}
+
+
+/* GREEN */
+.block-1-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-2-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-3-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-4-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-5-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-6-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-7-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-8-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+.block-9-rigth{
+    background-color: green;
+    width: 100%;
+    height: 33%;
+}
+
+
+/* WHITE */
+.block-1-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-2-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-3-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-4-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-5-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-6-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-7-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-8-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+.block-9-bottom{
+    background-color: white;
+    width: 100%;
+    height: 33%;
+}
+
+
+/* CYAN */
+.block-1-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-2-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-3-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-4-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-5-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-6-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-7-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-8-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+.block-9-left{
+    background-color: cyan;
+    width: 100%;
+    height: 33%;
+}
+
+@keyframes animete_cube{
+    from{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
