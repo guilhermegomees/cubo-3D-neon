@@ -1,406 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #404040;
+    min-height: 100vh;
+    background-color: #050505;
 }
-.container{
-    width: 150px;
-    height: 150px;
-    margin: 100px;
-    perspective: 600px;
-}
-.cube, .cube-side{
-    width: 150px;
-    height: 150px;
-}
+
 .cube{
-    transform-style: preserve-3d;
     position: relative;
-    animation: animete_cube 20s infinite linear;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animete_cube 10s linear infinite;
 }
-.cube-side{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    border-color: rgba(30, 144, 255, .5);
-    color: rgba(30, 144, 255, .8);
-    background-color: rgba(30, 144, 255, .2);
+
+.cube div{
     position: absolute;
-}
-.cube-side-front{
-    background-color: red;
-    color: black;
-    transform: translate3d(0, 0, 75px);
-    display: flex;
-}
-.cube-side-back{
-    background-color: orange;
-    color: orange;
-    transform: rotateY(180deg) translate3d(0, 0, 75px);
-    display: flex;
-}
-.cube-side-top{
-    background-color: yellow;
-    color: yellow;
-    transform: rotateX(90deg) translate3d(0, 0, 75px);
-    display: flex;
-}
-.cube-side-rigth{
-    background-color: green;
-    color: green;
-    transform: rotateY(90deg) translate3d(0, 0, 75px);
-    display: flex;
-}
-.cube-side-bottom{
-    background-color: white;
-    color: white;
-    transform: rotateX(-90deg) translate3d(0, 0, 75px);
-    display: flex;
-}
-.cube-side-left{
-    background-color: cyan;
-    color: cyan;
-    transform: rotateY(-90deg) translate3d(0, 0, 75px);
-    display: flex;
-}
-
-
-.block-1{
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    float: left;
-    text-align: center;
+    transform-style: preserve-3d;
 }
-.block-2{
+
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    float: left;
-    text-align: center;
-}
-.block-3{
-    width: 100%;
-    height: 100%;
-    float: left;
-    text-align: center;
+    background: linear-gradient(#151515, #ff00d4);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px); /* 300 / 2 = 150 */
 }
 
-
-/* RED */
-.block-1-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-    border-left: 0;
-}
-.block-2-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-    border-left: 0;
-}
-.block-3-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border-right: 1px solid #000;
-}
-.block-4-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-}
-.block-5-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-}
-.block-6-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-    border-bottom: 0;
-}
-.block-7-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-    border-right: 0;
-}
-.block-8-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border: 1px solid #000;
-    border-top: 0;
-    border-right: 0;
-}
-.block-9-front{
-    background-color: red;
-    width: 100%;
-    height: 33%;
-    border-left: 1px solid #000;
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
 }
 
-
-/* ORANGE */
-.block-1-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-2-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-3-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-4-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-5-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-6-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-7-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-8-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
-}
-.block-9-back{
-    background-color: orange;
-    width: 100%;
-    height: 33%;
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgb(255, 0, 255);
+    transform: translateZ(-380px);
+    filter: blur(20px);
+    box-shadow: 0 0 120px rgba(242, 0, 255, 0.2), 
+    0 0 200px rgba(242, 0, 255, 0.4),
+    0 0 300px rgba(242, 0, 255, 0.6),
+    0 0 400px rgba(242, 0, 255, 0.8),
+    0 0 500px rgba(242, 0, 255, 1);
 }
 
-
-/* YELLOW */
-.block-1-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-2-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-3-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-4-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-5-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-6-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-7-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-8-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-.block-9-top{
-    background-color: yellow;
-    width: 100%;
-    height: 33%;
-}
-
-
-/* GREEN */
-.block-1-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-2-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-3-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-4-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-5-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-6-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-7-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-8-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-.block-9-rigth{
-    background-color: green;
-    width: 100%;
-    height: 33%;
-}
-
-
-/* WHITE */
-.block-1-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-2-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-3-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-4-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-5-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-6-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-7-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-8-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-.block-9-bottom{
-    background-color: white;
-    width: 100%;
-    height: 33%;
-}
-
-
-/* CYAN */
-.block-1-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-2-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-3-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-4-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-5-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-6-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-7-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-8-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
-.block-9-left{
-    background-color: cyan;
-    width: 100%;
-    height: 33%;
-}
 
 @keyframes animete_cube{
-    from{
-        transform: rotateX(0deg) rotateY(0deg);
+    0%{
+        transform: rotateX(-20deg) rotateY(0deg);
     }
-    to{
-        transform: rotateX(360deg) rotateY(360deg);
+    100%{
+        transform: rotateX(-20deg) rotateY(360deg);
     }
 }
